@@ -52,7 +52,7 @@ public class PrimeCollection
     public static void main( String[] args )
     {
     	PrimeCollection p = new PrimeCollection();
-    	p.initRandom(100, 1000);
+    	p.initRandom(100, 2000);
     	p.printPrimes();	
     }
 }
