@@ -1,1 +1,151 @@
 Nom : ZHANG
+Prenom: Shuting
+
+
+####################
+#    td00-maven    #
+####################
+
+Exo1 ============================== 
+
+Q4 
+bash-3.2$ mvn --version
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /opt/apache-maven
+Java version: 12.0.1, vendor: AdoptOpenJDK, runtime: /Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home
+
+Q5
+Maven utilise un ensemble d'identificateurs, également appelés coordonnées, pour identifier de manière unique un projet et spécifier comment l'artefact du projet doit être empaqueté: groupId - un nom de base unique de la société ou du groupe qui a créé le projet. artifactId - un nom unique du projet. version - une version du projet
+
+Q6
+Dans target, il y a des classes et test classes, aussi maven-archiver, surefire-reports.
+
+Q8
+class path est une variable d'environnement qui nous aide à éduquer la machine virtuelle Java d'où elle commencera la recherche les fichiers .class.
+
+Q13
+Quand on veut compiler un certain projet dans une version différente de celle que l’on utilise actuellement, on peut le spécifier dans la propriété maven.compiler.target. Le même pour source.
+
+
+Exo2 ============================== 
+
+Q1
+bash-3.2$ java -jar target/td00-1.0-SNAPSHOT.jar
+Cc n’étais pas un succès, MANIFEST not found
+
+Exo3 ============================== 
+
+Q3
+Ctrl + Espace fait l’auto-completion de System.out.println()
+
+Q4
+Eclipse propose des options, soit auto-completion de la méthode toString(), soit créer une méthode de toStr().
+
+Q5
+Eclipse propose pleins d’options. La première est de créer une méthode main.
+
+Q6
+Eclipse crée des setter et getter.
+
+Q7
+Eclipse renomme le nom de classe et la variable.
+
+
+
+
+####################
+#    td00bis-git   #
+####################
+
+Exo1 ============================== 
+
+Q5 
+diff --git a/td00/src/main/java/fr/dauphine/ja/zhangshuting/td00/PrimeCollection.java b/td00/src/main/java/fr/dauphine/ja/zhangshuting/td00/PrimeCollection.java
+index 0ea8a6f..8235fda 100644
+--- a/td00/src/main/java/fr/dauphine/ja/zhangshuting/td00/PrimeCollection.java
++++ b/td00/src/main/java/fr/dauphine/ja/zhangshuting/td00/PrimeCollection.java
+@@ -52,7 +52,7 @@ public class PrimeCollection
+     public static void main( String[] args )
+     {
+        PrimeCollection p = new PrimeCollection();
+-       p.initRandom(100, 1000);
++       p.initRandom(100, 2000);
+        p.printPrimes();        
+     }
+ }
+(END)
+
+
+Q6
+commit 32122067a85f528051a4564059d2d228924ac57b (HEAD -> master)
+Author: fruitbot <shutingzhang110@gmail.com>
+Date:   Thu Sep 17 16:30:48 2020 +0200
+
+    Increase random generator upper bound
+
+commit 4c95f75246fe3c6916a0d14604c5bae2d2cb887c
+Author: fruitbot <shutingzhang110@gmail.com>
+Date:   Thu Sep 17 16:28:00 2020 +0200
+
+    initial im- port
+
+
+Q9
+bash-3.2$ git diff 4c95f75246fe3c6916a0d14604c5bae2d2cb887c 32122067a85f528051a4564059d2d228924ac57b
+
+
+Q10
+bash-3.2$ git diff HEAD HEAD^
+
+
+Exo2 ============================== 
+Q3
+En haut à gauche de l’interface gitk, c’est vert et deux commits sont reliés.
+
+Q5 
+$ git push origin master
+To https://github.com/Dauphine-Java-M1/td-fruitbot.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Dauphine-Java-M1/td-fruitbot.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+Q6
+$ git pull origin master
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/Dauphine-Java-M1/td-fruitbot
+ * branch            master     -> FETCH_HEAD
+   3212206..8d9570c  master     -> origin/master
+Auto-merging td00/REPONSES.txt
+CONFLICT (content): Merge conflict in td00/REPONSES.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+<<<<<< HEAD
+Nom : ZHANG
+une modification `a la fin du fichier REPONSES.txt
+=======
+une modification au d ́ebut du fichier REPONSES.txt
+Nom : ZHANG
+>>>>>> 8d9570c91ce78f48c488929a9f5895e7d1b49ae8
+
+Il y a des merge conflits. Dans gitk, on constate que les merge conflits sont soulignés.
+
+
+Q7
+Si deux personnes modifient la même ligne, la dernière personne qui fait le changement doit faire le merge.
+
+
+
+Exo3 ============================== 
+
+Q2 
+Quand on lance JUnit, en haut à gauche, tout est vert, runs 1/1; Errors 0, Failures 0.
+Si on remplace assertTrue(true) en assertTrue (false), le program retourne false. Dans JUnit, tout est rouge, runs 1/1; Errors 0, Failures 1.assertTrue est utilisé pour vérifier si une condition booléenne donnée est vraie. Cette assertion retourne true si la condition spécifiée passe, sinon, une erreur d'assertion est levée.
