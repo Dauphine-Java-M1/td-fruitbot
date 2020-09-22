@@ -24,7 +24,7 @@ public class PrimeCollection
             this.numbers.add(nxt);
         }
 	}
-	private static boolean isPrime(int p) {
+	public boolean isPrime(int p) {
 		boolean flag = false;
 		if(p==0 || p==1){  
 			return false;
